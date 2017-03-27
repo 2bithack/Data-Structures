@@ -11,6 +11,9 @@ def decode(str_num, base):
     """
     assert 2 <= base <= 36
     # TODO: Decode number
+    # return int(str_num, base)
+    
+
 
 def encode(num, base):
     """
