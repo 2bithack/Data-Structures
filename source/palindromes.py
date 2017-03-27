@@ -2,7 +2,7 @@
 
 # Hint: use string.ascii_letters (all letters in ASCII character set)
 import string
-
+import re
 
 def is_palindrome(text):
     """A string of characters is a palindrome if it reads the same forwards and
@@ -16,7 +16,12 @@ def is_palindrome(text):
 
 def is_palindrome_iterative(text):
     # TODO: implement the is_palindrome function iteratively here
-    pass
+    text = text.lower()
+    text = re.sub('[^A-Za-z0-9]+', "", text)
+    if text == text[::-1]:
+        return True
+    return False
+
     # once implemented, change is_palindrome to call is_palindrome_iterative
     # to verify that your iterative implementation passes all tests
 
