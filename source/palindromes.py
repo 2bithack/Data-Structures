@@ -16,8 +16,7 @@ def is_palindrome(text):
 
 def is_palindrome_iterative(text):
     # TODO: implement the is_palindrome function iteratively here
-    text = text.lower()
-    text = re.sub('[^A-Za-z0-9]+', "", text)
+    text = re.sub('[^A-Za-z0-9]+', "", text.lower())
     if text == text[::-1]:
         return True
     return False
@@ -28,7 +27,10 @@ def is_palindrome_iterative(text):
 
 def is_palindrome_recursive(text, left=None, right=None):
     # TODO: implement the is_palindrome function recursively here
-    pass
+    text = re.sub('[^A-Za-z0-9]+', "", text.lower())
+    if len(text) <= 1:
+        return True
+    return text[0] == text[-1] and is_palindrome_recursive(text[1:-1])
     # once implemented, change is_palindrome to call is_palindrome_recursive
     # to verify that your iterative implementation passes all tests
 
