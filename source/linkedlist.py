@@ -68,6 +68,10 @@ class LinkedList(object):
         # Now node_count contains the number of nodes
         return node_count
 
+    def size(self):
+        return len(self)
+
+
     def get_at_index(self, index):
         """Return the item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size"""
@@ -75,6 +79,13 @@ class LinkedList(object):
         if not (0 <= index < self.size):
             raise ValueError('List index out of range: {}'.format(index))
         # TODO: Find the node at the given index and return the node's data
+        current = self.head
+        node_count = 0
+
+        while node_count != index:
+            current = current.next
+            node_count += 1
+        return current.data
 
     def insert_at_index(self, index, item):
         """Insert the given item at the given index in this linked list, or
@@ -83,6 +94,15 @@ class LinkedList(object):
         if not (0 <= index <= self.size):
             raise ValueError('List index out of range: {}'.format(index))
         # TODO: Find the node before the given index and insert the item after
+        current = self.head
+        node_count = 0
+
+        while count != index:
+            current = current.next
+            node_count += 1
+
+
+
 
     def append(self, item):
         """Insert the given item at the tail of this linked list"""

@@ -20,7 +20,7 @@ def linear_search_recursive(array, item, index=0):
     # TODO: implement linear search recursively here
     if array is None or len(array) == 0:
         return None
-
+        
     if index < len(array):
         if item == array[index]:
             return index
