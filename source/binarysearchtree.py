@@ -38,7 +38,6 @@ class BinaryNode(object):
         # Return one more than the greater of the left height and right height
         return 1 + max(left_height, right_height)
 
-
 class BinarySearchTree(object):
 
     def __init__(self, items=None):
@@ -165,7 +164,6 @@ class BinarySearchTree(object):
                 temp = node.left
                 node = None
                 return temp
-
 
 def test_binary_search_tree():
     # Create a complete binary search tree of 3, 7, or 15 items in level-order
