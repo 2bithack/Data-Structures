@@ -19,6 +19,10 @@
 
 ### [Class 6](Class6.md): Friday, March 31 – Map & Hash Table
 
+### [Class 7](Class7.md): Monday, April 3 – Set & Circular Buffer
+
+### [Class 8](Class8.md): Wednesday, April 5 – Trees
+
 
 ## Working with this GitHub repository
 
