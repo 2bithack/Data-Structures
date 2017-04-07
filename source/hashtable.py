@@ -1,7 +1,5 @@
-#!python
 
 from linkedlist import LinkedList
-
 
 class HashTable(object):
 
