@@ -15,6 +15,7 @@ class BinaryNode(object):
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)"""
         # TODO: Check if both left child and right child have no value
+
         if self.left is None and self.right is None:
             return True
         else:
@@ -23,6 +24,7 @@ class BinaryNode(object):
     def is_internal(self):
         """Return True if this node is internal (has at least one child)"""
         # TODO: Check if either left child or right child has a value
+
         if self.left is not None or self.right is not None:
             return True
         else:
@@ -37,6 +39,7 @@ class BinaryNode(object):
         right_height = self.right.height() if self.right is not None else -1
         # Return one more than the greater of the left height and right height
         return 1 + max(left_height, right_height)
+
 
 class BinarySearchTree(object):
 
@@ -165,6 +168,82 @@ class BinarySearchTree(object):
                 node = None
                 return temp
 
+    def items_in_order(self, node=None, items=None):
+        """Return a list of all items in this binary search tree found using
+        in-order traversal starting at the given node after the given items"""
+        # Set up starting node and items list if not given
+        if node is None:
+            node = self.root
+        if items is None:
+            items = list()
+        # TODO: Traverse left subtree, if it exists
+        ...
+        # TODO: Add this node's data to the items list
+        ...
+        # TODO: Traverse right subtree, if it exists
+        ...
+        # Return the items list to the original caller
+        return items
+
+    def items_pre_order(self, node=None, items=None):
+        """Return a list of all items in this binary search tree found using
+        pre-order traversal starting at the given node after the given items"""
+        # Set up starting node and items list if not given
+        if node is None:
+            node = self.root
+        if items is None:
+            items = list()
+        # TODO: Add this node's data to the items list
+        ...
+        # TODO: Traverse left subtree, if it exists
+        ...
+        # TODO: Traverse right subtree, if it exists
+        ...
+        # Return the items list to the original caller
+        return items
+
+    def items_post_order(self, node=None, items=None):
+        """Return a list of all items in this binary search tree found using
+        post-order traversal starting at the given node after the given items"""
+        # Set up starting node and items list if not given
+        if node is None:
+            node = self.root
+        if items is None:
+            items = list()
+        # TODO: Traverse left subtree, if it exists
+        ...
+        # TODO: Traverse right subtree, if it exists
+        ...
+        # TODO: Add this node's data to the items list
+        ...
+        # Return the items list to the original caller
+        return items
+
+    def items_level_order(self):
+        """Return a list of all items in this binary search tree found using
+        level-order traversal"""
+        # TODO: Create a queue to store nodes not yet traversed in level-order
+        queue = ...
+        # Create an items list
+        items = list()
+        # TODO: Enqueue the root node if this tree is not empty
+        if ...:
+            queue...
+        # TODO: Loop until the queue is empty
+        while ...:
+            # TODO: Dequeue the node at the front of the queue
+            node = ...
+            # TODO: Add this node's data to the items list
+            ...
+            # TODO: Enqueue this node's left child if it exists
+            if ...:
+                ...
+            # TODO: Enqueue this node's right child if it exists
+            if ...:
+                ...
+        # Return the items list
+        return items
+
 def test_binary_search_tree():
     # Create a complete binary search tree of 3, 7, or 15 items in level-order
     # items = [2, 1, 3]
@@ -191,6 +270,12 @@ def test_binary_search_tree():
     item = 123
     result = bst.search(item)
     print('search({}): {}'.format(item, result))
+
+    print('\nTraversing items:')
+    print('items in-order:    ' + str(bst.items_in_order()))
+    print('items pre-order:   ' + str(bst.items_pre_order()))
+    print('items post-order:  ' + str(bst.items_post_order()))
+    print('items level-order: ' + str(bst.items_level_order()))
 
 
 if __name__ == '__main__':
