@@ -177,11 +177,13 @@ class BinarySearchTree(object):
         if items is None:
             items = list()
         # TODO: Traverse left subtree, if it exists
-        ...
+        if node.left is not None:
+            self.items_in_order(node.left, items)
         # TODO: Add this node's data to the items list
-        ...
+        items.append(node.data)
         # TODO: Traverse right subtree, if it exists
-        ...
+        if node.right is not None:
+            self.items_in_order(node.right, items)
         # Return the items list to the original caller
         return items
 
@@ -194,11 +196,13 @@ class BinarySearchTree(object):
         if items is None:
             items = list()
         # TODO: Add this node's data to the items list
-        ...
+        items.append(node.data)
         # TODO: Traverse left subtree, if it exists
-        ...
+        if node.left is not None:
+            self.items_in_order(node.left, items)
         # TODO: Traverse right subtree, if it exists
-        ...
+        if node.right is not None:
+            self.items_in_order(node.right, items)
         # Return the items list to the original caller
         return items
 
@@ -211,11 +215,13 @@ class BinarySearchTree(object):
         if items is None:
             items = list()
         # TODO: Traverse left subtree, if it exists
-        ...
+        if node.left is not None:
+            self.items_in_order(node.left, items)
         # TODO: Traverse right subtree, if it exists
-        ...
+        if node.right is not None:
+            self.items_in_order(node.right, items)
         # TODO: Add this node's data to the items list
-        ...
+        items.append(node.data)
         # Return the items list to the original caller
         return items
 
